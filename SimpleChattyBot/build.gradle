@@ -1,0 +1,31 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'org.Darkstar1712'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine'
+}
+
+test {
+    useJUnitPlatform()
+}
+
+application {
+    // Define the main class for the application.
+    mainClass = 'SimpleChattyBot.SimpleChattyBot'
+}
+
+jar {
+    manifest {
+        attributes("Main-Class": "SimpleChattyBot.SimpleChattyBot")   // for Groovy DSL
+    }
+}
